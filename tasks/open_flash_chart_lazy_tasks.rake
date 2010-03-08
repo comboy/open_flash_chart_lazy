@@ -3,8 +3,8 @@ namespace :open_flash_chart_lazy do
   
   desc 'Installs required swf in public/ and javascript files to the public/javascripts directory.'
   task :install do
-    FileUtils.cp Dir[PLUGIN_ROOT + '/assets/swf/*.swf'], RAILS_ROOT + '/public'
-    FileUtils.cp Dir[PLUGIN_ROOT + '/assets/javascripts/*.js'], RAILS_ROOT + '/public/javascripts'
+    FileUtils.cp Dir[PLUGIN_ROOT + '/assets/swf/*.swf'], File.join(RAILS_ROOT,'public')
+    FileUtils.cp Dir[PLUGIN_ROOT + '/assets/javascripts/*.js'], File.join(RAILS_ROOT,'/public/javascripts')
   end
   desc 'Removes the swf and javascripts for the plugin.'
   task :remove do
